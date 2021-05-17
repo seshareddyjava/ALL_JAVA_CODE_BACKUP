@@ -1,0 +1,17 @@
+
+@FunctionalInterface
+interface ITest{
+	public void m1(int a,int b);
+		
+}
+
+public class MainTest {
+
+	public static void main(String[] args) {
+
+		ITest test = (a,b)->System.out.println(a+b);
+		m1(10,20);
+		
+	}
+
+}

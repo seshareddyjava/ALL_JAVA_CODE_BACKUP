@@ -1,0 +1,35 @@
+package com.slokam.Customer.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.slokam.Customer.entity.Customer;
+import com.slokam.Customer.repository.ICustomerRepo;
+
+@Service
+public class CustomerService implements ICustomerService {
+
+	@Autowired
+	private ICustomerRepo custRepo;
+	@Override
+	public void saveCust(Customer cust) {
+		custRepo.save(cust);
+	}
+
+	@Override
+	public void getCustByID(Integer id) {
+		custRepo.findById(id);
+
+	}
+
+	@Override
+	public void getAllCust() {
+		custRepo.findAll();
+	}
+
+	@Override
+	public void deleteCustByID(Integer id) {
+	custRepo.deleteById(id);
+	}
+
+}

@@ -1,0 +1,27 @@
+package com.slokam.Customer.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.slokam.Customer.entity.Customer;
+import com.slokam.Customer.service.ICustomerService;
+
+@RestController
+@RequestMapping("/customer")
+public class CustomerConroller {
+
+	@Autowired
+	private ICustomerService custService;
+	
+	@GetMapping("/getAll")
+	public ResponseEntity<List<Customer>> getAll(){
+		List<Customer> allCust = custService.getAllCust();
+		return new ResponseEntity<List<Customer>>(allCust,HttpStatus.OK);
+	}
+}

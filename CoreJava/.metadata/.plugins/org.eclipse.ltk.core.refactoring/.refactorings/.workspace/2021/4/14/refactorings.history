@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;FileRead-ArrayList&apos;" deleteContents="true" description="Delete resource &apos;FileRead-ArrayList&apos;" element1="/FileRead-ArrayList" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1617438249159"/>&#x0A;<refactoring comment="Delete resource &apos;InheritanceRelation&apos;" deleteContents="true" description="Delete resource &apos;InheritanceRelation&apos;" element1="/InheritanceRelation" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1617438274021"/>
+</session>

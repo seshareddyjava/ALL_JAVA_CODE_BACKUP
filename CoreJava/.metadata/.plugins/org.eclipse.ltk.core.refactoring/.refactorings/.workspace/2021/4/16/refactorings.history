@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SerializationAndDeserialization&apos; to &apos;proj40-SerializationAndDeserialization&apos;" description="Rename resource &apos;SerializationAndDeserialization&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/SerializationAndDeserialization" name="proj40-SerializationAndDeserialization" stamp="1618292634755" updateReferences="true"/>
+</session>

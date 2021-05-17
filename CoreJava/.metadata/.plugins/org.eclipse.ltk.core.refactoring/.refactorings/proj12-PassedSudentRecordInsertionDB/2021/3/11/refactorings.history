@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;SudentPojo&apos; to &apos;StudentPojo&apos;&#x0D;&#x0A;- Original project: &apos;proj12-PassedSudentRecordInsertionDB&apos;&#x0D;&#x0A;- Original element: &apos;SudentPojo&apos;&#x0D;&#x0A;- Renamed element: &apos;StudentPojo&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;SudentPojo&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{SudentPojo.java[SudentPojo" matchStrategy="1" name="StudentPojo" qualified="false" references="true" similarDeclarations="false" stamp="1615529280247" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,27 @@
+
+
+package com.slokam.core;
+
+public class FinalKeyword {
+	
+	public static void main(String[] args) {
+		int a =10;
+		final StudentPojo std;
+		std=new StudentPojo(1, "sesha","btech");
+		//std = new StudentPojo(2, "rai", "eee");
+		System.out.println(a);
+		System.out.println(std);
+		test(a,std);
+		System.out.println(a);
+		System.out.println(std);
+	}
+	
+	public static void test(int a,StudentPojo std ) {
+		a= a+20;
+		std.setId(2);
+		std.setName("ravi");
+		std.setQual("eee");
+
+	}
+
+}

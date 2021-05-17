@@ -1,0 +1,15 @@
+package com.slokam.core.innerclasses;
+
+public class Outer {
+
+	private int a;
+	int b=20;
+	class Inner {
+		public void m1() {
+			a=10;
+			System.out.println("private variable value assigned and accessed" + a);
+			System.out.println("instance vriable accessed "+b);
+			System.out.println("Method from inner class");
+		}
+	}
+}

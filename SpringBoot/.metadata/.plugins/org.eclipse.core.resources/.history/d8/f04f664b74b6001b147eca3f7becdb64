@@ -1,0 +1,20 @@
+package com.slokam.Customer.entity;
+
+import javax.persistence.Entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+@Entity
+@Data
+@AllArgsConstructor
+@EqualsAndHashCode
+public class Customer {
+	
+	private Integer id;
+	private String name;
+	private Long mobile;
+	private Address addr;
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.slokam.core.innerclasses.AnonymousInnerClass&apos; to &apos;AnonymousInnerClassTest&apos;&#x0D;&#x0A;- Original project: &apos;proj44-InnerClasses&apos;&#x0D;&#x0A;- Original element: &apos;com.slokam.core.innerclasses.AnonymousInnerClass&apos;&#x0D;&#x0A;- Renamed element: &apos;com.slokam.core.innerclasses.AnonymousInnerClassTest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;AnonymousInnerClass&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.slokam.core.innerclasses{AnonymousInnerClass.java[AnonymousInnerClass" matchStrategy="1" name="AnonymousInnerClassTest" qualified="false" references="true" similarDeclarations="false" stamp="1621220563251" textual="false" version="1.0"/>
+</session>

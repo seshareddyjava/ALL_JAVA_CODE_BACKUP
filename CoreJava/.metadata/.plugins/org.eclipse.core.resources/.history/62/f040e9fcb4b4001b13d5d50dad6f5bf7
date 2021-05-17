@@ -1,0 +1,10 @@
+package com.slokam.java8;
+
+interface ITest{
+	
+}
+
+
+public class MainTest {
+
+}

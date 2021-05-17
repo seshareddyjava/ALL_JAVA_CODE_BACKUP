@@ -1,0 +1,31 @@
+package com.slokam.Customer.service;
+
+import com.slokam.Customer.entity.Customer;
+
+public class CustomerService implements ICustomerService {
+
+	@Override
+	public void saveCust(Customer cust) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void getCustByID(Integer id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void getAllCust() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deleteCustByID(Integer id) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

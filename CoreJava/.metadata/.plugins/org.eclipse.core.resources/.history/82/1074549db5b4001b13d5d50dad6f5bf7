@@ -1,0 +1,10 @@
+package com.slokam.java8;
+
+public class MainTest {
+
+	Runnable r = ()->{
+		for(int i=0;i<10;i++) {
+			System.out.println(i);
+		}
+	};
+}

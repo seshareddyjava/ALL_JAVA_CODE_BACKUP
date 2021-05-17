@@ -1,0 +1,9 @@
+package com.slokam.core;
+
+public class StudentPojo {
+	
+	private Integer id;
+	private String name;
+	private String qual;
+
+}

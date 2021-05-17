@@ -1,0 +1,19 @@
+package com.slokam.Customer.Exception;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+public class CustomerApplicationException extends RuntimeException {
+
+	private static final long serialVersionUID = 1L;
+	private String errorCode;
+	private String errorMessage;
+	
+	public CustomerApplicationException(String errorCode,String errorMessage) {
+		super();
+		this.errorCode = errorCode;
+		this.errorMessage = errorMessage;
+	}
+}

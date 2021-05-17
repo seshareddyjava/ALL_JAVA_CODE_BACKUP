@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+D:\JAVApractice\Slokaamtest\.metadata\.plugins\org.eclipse.jdt.core
+2422883662.index
+3519640577.index

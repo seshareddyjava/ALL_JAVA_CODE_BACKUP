@@ -1,0 +1,27 @@
+package com.slokam.Customer.entity;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+@Entity
+@Data
+@AllArgsConstructor
+@EqualsAndHashCode
+public class Customer {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
+	private String name;
+	private Long mobile;
+	@OneToMany(mappedBy = "cust" ,cascade = CascadeType.ALL)
+	private Address addr;
+
+}

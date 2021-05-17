@@ -1,0 +1,5 @@
+package com.slokam.Customer.service;
+
+public class ICustomerService {
+
+}

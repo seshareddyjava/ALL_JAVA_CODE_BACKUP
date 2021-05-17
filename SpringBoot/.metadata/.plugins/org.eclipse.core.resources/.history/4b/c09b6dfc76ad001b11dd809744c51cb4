@@ -1,0 +1,20 @@
+
+
+package com.slokam.core;
+
+public class FinalKeyword {
+	
+	public static void main(String[] args) {
+		int a =10;
+		StudentPojo std = new StudentPojo(1, "sesha","btech");
+		System.out.println(a);
+		test(a,std);
+		System.out.println(a);
+	}
+	
+	public static void test(int a,StudentPojo std ) {
+		a= a+20;
+		std = new StudentPojo(2, "rai", "eee");
+	}
+
+}

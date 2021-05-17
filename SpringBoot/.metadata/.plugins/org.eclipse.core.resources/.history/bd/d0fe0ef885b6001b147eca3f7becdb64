@@ -1,0 +1,8 @@
+package com.slokam.Customer.Exception;
+
+public class CustomerApplicationException extends Exception {
+	
+	public CustomerApplicationException(String str) {
+		super(str);
+	}
+}

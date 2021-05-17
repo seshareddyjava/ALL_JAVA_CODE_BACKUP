@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Customer.java&apos; to &apos;proj39-cloning&apos;&#x0D;&#x0A;- Original project: &apos;proj32-hibernateRelations&apos;&#x0D;&#x0A;- Destination element: &apos;proj39-cloning&apos;&#x0D;&#x0A;- Original element: &apos;com.slokam.hibernate.relations.Customer.java&apos;" description="Copy compilation unit" destination="=proj39-cloning" element1="/src&lt;com.slokam.hibernate.relations{Customer.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1618209959207" units="1" version="1.0"/>
+</session>

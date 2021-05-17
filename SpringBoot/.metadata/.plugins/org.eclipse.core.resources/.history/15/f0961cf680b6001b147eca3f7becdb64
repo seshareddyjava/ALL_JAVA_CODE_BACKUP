@@ -1,0 +1,54 @@
+package com.slokam.Customer.controller;
+
+import java.util.List;
+import java.util.Objects;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.slokam.Customer.Exception.CustomerApplicationException;
+import com.slokam.Customer.entity.Customer;
+import com.slokam.Customer.service.ICustomerService;
+
+import lombok.extern.slf4j.Slf4j;
+
+@RestController
+@RequestMapping("/customer")
+@Slf4j
+public class CustomerConroller {
+
+	@Autowired
+	private ICustomerService custService;
+	
+	@GetMapping("/getAll")
+	public ResponseEntity<List<Customer>> getAll(){
+		List<Customer> allCust = custService.getAllCust();
+		return new ResponseEntity<List<Customer>>(allCust,HttpStatus.OK);
+	}
+	@PostMapping("/save")
+	public ResponseEntity<HttpStatus> saveCust(@RequestBody Customer cust) throws CustomerApplicationException{
+		log.info("saveCust() start");
+		if(Objects.isNull(cust))
+			throw new CustomerApplicationException("null exception message");
+		else custService.saveCust(cust);
+		return new ResponseEntity<HttpStatus>(HttpStatus.CREATED);
+	}
+	@GetMapping("/getByID/{id}")
+	public ResponseEntity<Customer> getByID(@PathVariable Integer id){
+		Customer custByID = custService.getCustByID(id);
+		return new ResponseEntity<Customer>(custByID,HttpStatus.FOUND);
+	}
+	@DeleteMapping("/delByID/{id}")
+	public ResponseEntity<HttpStatus> delByID(@PathVariable Integer id){
+		custService.deleteCustByID(id);
+		return new ResponseEntity<HttpStatus>(HttpStatus.FOUND);
+	}
+}

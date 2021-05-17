@@ -1,0 +1,7 @@
+package com.slokam.core.innerclasses;
+
+// we can write a inner class inside a method
+public class MethodLocalInnerClass {
+
+	
+}

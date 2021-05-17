@@ -1,0 +1,20 @@
+package com.slokam.Customer.entity;
+
+import java.io.Serializable;
+
+import javax.persistence.CascadeType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+public class Address implements Serializable {
+
+	private Integer id;
+	private String area;
+	private String district;
+	private String state;
+	private Long pin;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn()
+	private Customer cust;
+	
+}

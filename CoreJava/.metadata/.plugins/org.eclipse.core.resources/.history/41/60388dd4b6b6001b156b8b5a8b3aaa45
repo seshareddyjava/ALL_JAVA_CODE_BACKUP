@@ -1,0 +1,10 @@
+package com.slokam.core.innerclasses;
+
+public class Outer {
+
+	class Inner {
+		public void m1() {
+			System.out.println("Method from inner class");
+		}
+	}
+}

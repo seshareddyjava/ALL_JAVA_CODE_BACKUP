@@ -1,0 +1,24 @@
+package com.slokam.java8;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+
+public class MainTest {
+public static void main(String[] args) {
+	
+	Runnable r = ()->{
+		for(int i=0;i<10;i++) {
+			System.out.println(i);
+		}
+	};
+	Thread t = new Thread(r);
+	//t.start();
+	Comparator <String> comp = (o1,o2)->o1.compareTo(o2);
+	ArrayList<String> l = new ArrayList<String>();
+	l.add("srinivas");l.add("chandra");l.add("sai");
+	l.add("nagaraju");l.add("yashwanth");l.add("raviteja");
+	long l1 =l.stream().count();
+	System.out.println(l1);
+}
+	
+}

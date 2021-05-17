@@ -1,0 +1,12 @@
+package com.slokam.core.innerclasses;
+
+public class NestedInnnerClass {
+
+	class Inner1{
+		class Inner2{
+			public void m1() {
+				System.out.println("method from inner2 class");
+			}
+		}
+	}
+}

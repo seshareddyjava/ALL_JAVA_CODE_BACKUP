@@ -1,0 +1,15 @@
+package com.slokam.Customer.Exception;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+
+@ControllerAdvice
+public class GlobalExceptionClass{
+
+	@ExceptionHandler(Exception.class)
+	public ResponseEntity<String> exception(){
+		return new ResponseEntity<String>("Error occured please Retry ",HttpStatus.BAD_REQUEST);
+	}
+}

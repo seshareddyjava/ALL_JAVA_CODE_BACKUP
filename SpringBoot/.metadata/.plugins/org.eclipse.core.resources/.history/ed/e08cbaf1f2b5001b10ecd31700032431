@@ -1,0 +1,110 @@
+package com.slokam.MailSending.controller;
+
+import java.util.Comparator;
+import java.util.List;
+import java.util.Objects;
+import java.util.Properties;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.slokam.MailSending.entity.EmailCfg;
+import com.slokam.MailSending.entity.MailSenderInfo;
+import com.slokam.MailSending.repo.MailSendingRepo;
+
+import lombok.extern.slf4j.Slf4j;
+
+@RestController
+@RequestMapping("/MailSending")
+@Slf4j
+public class MailSendingConroller {
+	@Autowired
+	private EmailCfg cfg;
+	
+	@Autowired
+	private MailSendingRepo mailRepo;
+	@Autowired
+	private JavaMailSenderImpl mailSender;
+	
+	
+	@PostMapping("/sendMail")
+	public void sendMail(@RequestBody MailSenderInfo info) {
+		log.info("MailSender object {}",info);
+		MailSendingConroller controller = new MailSendingConroller();
+		boolean b = Objects.isNull(controller);
+		log.info("contoller null {} ",b);
+		controller.saveFeedback(info);
+		log.info("inside MailSendingConroller sendMail()");
+		log.info("MailSendingConroller sendMail argument data :::{}",info);
+		//JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+		log.info("mailSender :: {} ",mailSender);
+		mailSender.setHost(this.cfg.getHost());
+		mailSender.setUsername(this.cfg.getUserName());
+		mailSender.setPassword(this.cfg.getPassword());
+		mailSender.setPort(this.cfg.getPort());
+		
+		Properties props = new Properties();
+		props.put("mail.smtp.starttls.enable", "true");
+		mailSender.setJavaMailProperties(props);
+		
+		SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+		simpleMailMessage.setFrom(info.getEmail());
+		simpleMailMessage.setTo("seshareddybelum@gmail.com");
+		simpleMailMessage.setText(info.getFeedback());
+		simpleMailMessage.setSubject("new message from " +info.getName());
+		log.info("simpleMailMessage :: {}",simpleMailMessage);
+		log.info("end of MailSendingConroller sendMail()");
+		
+		mailSender.send(simpleMailMessage);
+	}
+	
+	@PostMapping("/saveFeedback")
+	public ResponseEntity<String> saveFeedback(@RequestBody MailSenderInfo info){
+		mailRepo.save(info);		
+		return new ResponseEntity<String>("success,your feedback values us",HttpStatus.CREATED);
+	}
+	
+	@GetMapping("/getAllFeedbacks")
+	public ResponseEntity<List<MailSenderInfo>> getAllFeedbacks(){
+		List<MailSenderInfo> allFeedbacksList = mailRepo.findAll();
+		return new ResponseEntity<List<MailSenderInfo>>(allFeedbacksList,HttpStatus.OK);
+	}
+	/*
+	 * Comparator<MailSenderInfo> comparator =(o1,o2)->{ int a =
+	 * o1.getRating().compareTo(o2.getRating()); if(a==0) {
+	 * a=o1.getId().compareTo(o2.getId()); if(a==0) { a=
+	 * o1.getName().compareTo(o2.getName()); if(a==0) {
+	 * a=o1.getEmail().compareTo(o2.getEmail()); if(a==0) { a=
+	 * o1.getFeedback().compareTo(o2.getFeedback()); } } } } return a; };
+	 */
+
+	@GetMapping("/getAllFeedbacksByAscendingOrder")
+	public ResponseEntity<Set<MailSenderInfo>> getAllFeedbacksByAscendingOrder(){
+		List<MailSenderInfo> allFeedbacksList = mailRepo.findAll();
+		//allFeedbacksList.stream().sorted((r1,r2)->r1.getRating().compareTo(r2.getRating())).forEach(sortedRating->System.out.println(sortedRating));
+		Set<MailSenderInfo> ts = new TreeSet<MailSenderInfo>(comparator);
+		ts.addAll(allFeedbacksList);
+		return new ResponseEntity<Set<MailSenderInfo>>(ts,HttpStatus.OK);
+	}
+	@GetMapping("/getAllFeedbacksByDescendingOrder")
+	public ResponseEntity<List<MailSenderInfo>> getAllFeedbacksByDescendingOrder(){
+		List<MailSenderInfo> allFeedbacksList = mailRepo.findAll();
+		//allFeedbacksList.stream().sorted((r1,r2)->r1.getRating().compareTo(r2.getRating())).forEach(sortedRating->System.out.println(sortedRating));
+		//Set<MailSenderInfo> ts = new TreeSet<MailSenderInfo>(comparator.reversed());
+		//ts.addAll(allFeedbacksList);
+		List<MailSenderInfo> collect = allFeedbacksList.stream().sorted().collect(Collectors.toList());
+		return new ResponseEntity<List<MailSenderInfo>>(collect,HttpStatus.OK);
+	}
+}

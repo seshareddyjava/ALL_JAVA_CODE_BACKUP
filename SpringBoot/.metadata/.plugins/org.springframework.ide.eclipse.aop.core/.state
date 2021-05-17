@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="RestSec"/>
+<aop-project name="Proj02"/>
+<aop-project name="sales"/>
+<aop-project name="eurekaServer"/>
+<aop-project name="AppointmentBooking"/>
+<aop-project name="crm"/>
+<aop-project name="proj01-Appointment-PatientCURD"/>
+<aop-project name="boot-junit-demo"/>
+<aop-project name="configServer"/>
+<aop-project name="cust"/>
+<aop-project name="zullserver"/>
+</aop-reference-model>

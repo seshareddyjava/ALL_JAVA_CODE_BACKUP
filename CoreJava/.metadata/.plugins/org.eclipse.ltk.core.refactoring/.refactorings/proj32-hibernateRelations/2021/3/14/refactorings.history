@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;hibernate.cfg.xml&apos; to &apos;proj34-Collections/src&apos;&#x0D;&#x0A;- Original project: &apos;proj32-hibernateRelations&apos;&#x0D;&#x0A;- Destination element: &apos;proj34-Collections/src&apos;&#x0D;&#x0A;- Original element: &apos;hibernate.cfg.xml&apos;" description="Copy file" destination="=proj34-Collections/src" element1="src/hibernate.cfg.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1617092543319" units="0" version="1.0"/>
+</session>

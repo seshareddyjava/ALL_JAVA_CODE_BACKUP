@@ -1,0 +1,11 @@
+package com.slokam.Customer.service;
+
+import com.slokam.Customer.entity.Customer;
+
+public interface ICustomerService {
+
+	void saveCust(Customer cust);
+	void getCustByID(Integer id);
+	void getAllCust();
+	void deleteCustByID(Integer id);
+}

@@ -1,0 +1,22 @@
+package com.slokam.core.innerclasses;
+
+public class AnonymousInnerClass {
+	public void taste() {
+		System.out.println("sweet");
+	}
+	public static void main(String[] args) {
+		AnonymousInnerClassTest a = new AnonymousInnerClassTest() {
+			@Override
+			public void taste() {
+				taste2();
+				System.out.println("spicy");
+			}
+			public void taste2() {
+				System.out.println("idont know the taste");
+			}
+		};
+		
+		a.taste();
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.slokam.Customer.Exception;
+
+public class CustomerApplicationException extends Exception {
+
+}
